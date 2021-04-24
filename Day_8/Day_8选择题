@@ -1,0 +1,160 @@
+
+1.java中关于内存回收的正确说法是
+
+
+A 程序员必须创建一个线程来释放内存
+B 内存回收程序负责释放无用内存
+C 内存回收程序允许程序员直接释放内存
+D 内存回收程序可以在指定的时间释放内存对象
+
+正确答案： B
+
+2.A派生出子类B，B派生出子类C，并且在java源代码中有如下声明： 以下哪个说法是正确的？
+
+A a0=new A();
+
+A a1=new B();
+
+A a2=new C();
+
+
+A 第1行，第2行和第3行的声明都是正确的
+B 第1,2,3行都能通过编译，但第2,3行运行时出错
+C 第1,2行能通过编译，但第3行编译出错
+D 只有第1行能通过编译
+
+正确答案： A
+
+
+3.以下说法错误的是（）
+
+
+A 数组是一个对象
+B 数组不是一种原生类
+C 数组的大小可以任意改变
+D 在Java中，数组存储在堆中连续内存空间里
+
+正确答案： C
+
+
+4.Test.main() 函数执行后的输出是（）
+
+public class Test {
+    public static void main(String [] args){
+        System.out.println(new B().getValue());
+    }
+    static class A{
+        protected int value;
+        public A(int v) {
+            setValue(v);
+        }
+        public void setValue(int value){
+            this.value = value;
+        }
+        public int getValue(){
+            try{
+                value++;
+                return value;
+            } catch(Exception e){
+                System.out.println(e.toString());
+            } finally {
+                this.setValue(value);
+                System.out.println(value);
+            }
+            return value;
+        }
+    }
+    static class B extends A{
+        public B() {
+            super(5);
+            setValue(getValue() - 3);
+        }
+        public void setValue(int value){
+            super.setValue(2 * value);
+        }
+    }
+}
+
+
+A 11 17 34
+B 22 74 74
+C 6 7 7
+D 22 34 17
+
+
+正确答案： D
+
+5.关于Java的异常处理机制的叙述哪些正确？
+
+
+A 如果程序发生错误及捕捉到异常情况了，才会执行finally部分
+B 其他选项都不正确
+C 当try区段的程序发生异常且被catch捕捉到时，才会执行catch区段的程序
+D catch部分捕捉到异常情况时，才会执行finally部分
+
+正确答案： C
+
+6.如何跳出Array的forEach循环？（ ）
+
+
+A break
+B return true
+C return false
+D 以上都不是
+
+正确答案： A
+
+7.一个以”.java”为后缀的源文件
+
+A 只能包含一个类，类名必须与文件名相同
+B 只能包含与文件名相同的类以及其中的内部类
+C 只能有一个与文件名相同的类，可以包含其他类
+D 可以包含任意类
+
+
+正确答案： C
+
+8.如下Java语句,执行后， x的值是（） 
+
+double x= 3.0;
+int y=5;
+x/=--y;
+
+A 3
+B 0.6
+C 0.4
+D 0.75 
+
+正确答案： D
+
+9.cnt的值是
+
+public class Test{
+    static int cnt = 6;
+    static{
+        cnt += 9;
+    }
+    public static void main(String[] args){
+        System.out.println("cnt ="+ cnt);
+    }
+    static{
+        cnt /=3;
+    };
+}
+A cnt=5
+B cnt=2
+C cnt=3
+D cnt=6 
+
+正确答案： A
+
+
+10.JUnit主要用来完成什么
+
+A 发送HTTP请求
+B 建立TCP连接
+C 集成测试
+D 单元测试
+
+正确答案： D
+
